@@ -44,6 +44,11 @@ jobs:
           sed -i 's|000000000000.dkr.ecr.us-east-1.amazonaws.com/baitersburger:placeholder|${{ inputs.image_uri }}|' k8s/app-deployment.yaml
           
           kubectl apply -f k8s/namespace.yaml
+
+          kubectl create secret generic atlas-connection-secret \
+            --namespace=baitersburger \
+            --from-literal=connectionString="${{secrets.MONGO_URI}}" \
+            --dry-run=client -o yaml | kubectl apply -f -
           
           kubectl apply -f k8s/ --namespace=baitersburger
           
