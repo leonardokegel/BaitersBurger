@@ -12,7 +12,7 @@ Este projeto é uma aplicação Java com Spring Boot e MongoDB, orquestrados via
 ### Como rodar a aplicação
 
 
-1. Clone este repositório:
+1. Clone este repositório:a
 
     ```bash
     git clone https://github.com/lucasnabeto/BaitersBurger.git
